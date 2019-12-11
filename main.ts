@@ -1,3 +1,6 @@
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    game.over(false)
+})
 scene.setBackgroundColor(9)
 let mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -70,7 +73,8 @@ let ball = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
+`, SpriteKind.Enemy)
+mySprite.setFlag(SpriteFlag.StayInScreen, true)
 game.onUpdateInterval(1000, function () {
     ball.x += controller.dy()
     ball.y += controller.dx()
