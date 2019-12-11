@@ -75,7 +75,10 @@ let ball = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
-game.onUpdateInterval(1000, function () {
-    ball.x += controller.dy()
-    ball.y += controller.dx()
+for (let index = 0; index < 4; index++) {
+    ball.x += 0
+    ball.y += 0
+}
+game.onUpdateInterval(2, function () {
+	
 })
