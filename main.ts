@@ -76,3 +76,6 @@ let ball = sprites.create(img`
 `, SpriteKind.Enemy)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 ball.setFlag(SpriteFlag.StayInScreen, true)
+forever(function () {
+    ball.follow(mySprite, 50)
+})

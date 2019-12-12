@@ -5,12 +5,13 @@
     <variable type="" id="jGI!8QbR8c_6GJPCCU),">ball</variable>
     <variable type="" id="yf*d*4wkOsDs-!X9VvJM">value</variable>
     <variable type="" id="!MVTw!c2MC6ME|F@G1P^">list</variable>
+    <variable type="" id="^bzUR-Z,)_K)a-GRML4v">myEnemy</variable>
     <variable type="KIND_SpriteKind" id=".s[TylHg9U=9z=_x?3H9">Player</variable>
     <variable type="KIND_SpriteKind" id="QY+!9n/@ZxPPv`E?^M9n">Projectile</variable>
     <variable type="KIND_SpriteKind" id="8tH#gReT0OV_7Rg=[NM8">Food</variable>
     <variable type="KIND_SpriteKind" id="uKC0L6|{em~Q7?JHvh?@">Enemy</variable>
   </variables>
-  <block type="pxt-on-start" x="20" y="20">
+  <block type="pxt-on-start" x="58" y="4">
     <statement name="HANDLER">
       <block type="gamesetbackgroundcolor">
         <value name="color">
@@ -225,7 +226,7 @@
       </block>
     </statement>
   </block>
-  <block type="spritesoverlap" x="610" y="50">
+  <block type="spritesoverlap" x="590" y="30">
     <value name="HANDLER_DRAG_PARAM_sprite">
       <shadow type="argument_reporter_custom">
         <mutation typename="Sprite"></mutation>
@@ -259,32 +260,26 @@
       </block>
     </statement>
   </block>
-  <block type="Sprite_blockCombine_change" disabled="true" x="830" y="370">
-    <field name="property">Sprite.x@set</field>
-    <value name="mySprite">
-      <block type="variables_get">
-        <field name="VAR" id="jGI!8QbR8c_6GJPCCU)," variabletype="">ball</field>
-      </block>
-    </value>
-    <value name="value">
-      <shadow type="math_number">
-        <field name="NUM">0</field>
-      </shadow>
-    </value>
-    <next>
-      <block type="Sprite_blockCombine_change" disabled="true">
-        <field name="property">Sprite.y@set</field>
-        <value name="mySprite">
+  <block type="forever" x="670" y="490">
+    <statement name="HANDLER">
+      <block type="spriteFollowOtherSprite">
+        <mutation _expanded="1" _input_init="true"></mutation>
+        <value name="sprite">
           <block type="variables_get">
             <field name="VAR" id="jGI!8QbR8c_6GJPCCU)," variabletype="">ball</field>
           </block>
         </value>
-        <value name="value">
+        <value name="target">
+          <block type="variables_get">
+            <field name="VAR" id="HLi.%U0:GPON;q.Ve3-6" variabletype="">mySprite</field>
+          </block>
+        </value>
+        <value name="speed">
           <shadow type="math_number">
-            <field name="NUM">0</field>
+            <field name="NUM">50</field>
           </shadow>
         </value>
       </block>
-    </next>
+    </statement>
   </block>
 </xml>
